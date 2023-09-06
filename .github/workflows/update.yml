@@ -1,0 +1,35 @@
+name: preview
+on: pull_request
+
+jobs:
+  update:
+    name: Build of application
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Checking the key of expo
+        run: |
+          if [ -z "${{ secrets.EXPO_TOKEN }}" ]; then
+            echo "You must provide an EXPO_TOKEN secret linked to this project's Expo account in this repo's secrets. Learn more: https://docs.expo.dev/eas-update/github-actions"
+            exit 1
+          fi
+
+      - name: 🏗 Checkouting repository
+        uses: actions/checkout@v3
+
+      - name: 🏗 Settings Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: yarn
+
+      - name: 🏗 Settings EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Installing dependencies
+        run: yarn install
+
+      - name: 🚀 Publishing build
+        run: eas update --auto
