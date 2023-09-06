@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "aquaeVitae",
-    "slug": "app",
+    "slug": "aquae",
     "icon": "",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -27,7 +27,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "41c2b14d-1123-491e-aafb-5702a12e2e17"
+        "projectId": "cadbe4eb-c793-42be-8899-3551a3049d3d"
       }
     },
     "runtimeVersion": {
@@ -35,6 +35,7 @@
     },
     "updates": {
       "url": "https://u.expo.dev/41c2b14d-1123-491e-aafb-5702a12e2e17"
-    }
+    },
+    "owner": "ipb-aquae"
   }
 }
