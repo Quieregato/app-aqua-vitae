@@ -26,4 +26,5 @@ export const ContainerProfile = styled(ContainerBase)`
   gap: 57px;
 
   position: relative !important;
+  
 `;
