@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'; 
-import { IGlobalComponents } from '../Interfaces/IGlobal';
+import { IGlobalComponents } from '../interfaces/IGlobal';
 
 interface IUseForm<T> {
   initialState?: T;

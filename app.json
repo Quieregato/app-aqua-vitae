@@ -1,41 +1,12 @@
 {
   "expo": {
-    "name": "aquaeVitae",
-    "slug": "aquae",
-    "icon": "",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "userInterfaceStyle": "light",
-    "buildNumber": "1.0.0",
-    "githubUrl": "",
-    "splash": {
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#ffffff"
-      },
-      "versionCode": 1,
-      "package": "com.gustavosq.app"
-    },
     "extra": {
       "eas": {
-        "projectId": "cadbe4eb-c793-42be-8899-3551a3049d3d"
+        "projectId": "41c2b14d-1123-491e-aafb-5702a12e2e17"
       }
     },
-    "runtimeVersion": {
-      "policy": "sdkVersion"
-    },
-    "updates": {
-      "url": "https://u.expo.dev/41c2b14d-1123-491e-aafb-5702a12e2e17"
-    },
-    "owner": "ipb-aquae"
+    "android": {
+      "package": "com.gustavosq.app"
+    }
   }
 }

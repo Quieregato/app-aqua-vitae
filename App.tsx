@@ -7,11 +7,13 @@ import {
 
 import AppLoading from 'expo-app-loading';
 import 'react-native-gesture-handler';
+import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components/native';
-import { Routes } from './src/Routes';
+import { Routes } from './src/routes';
 
 import * as SplashScreen from 'expo-splash-screen';
-import Themes from './src/Themes';
+import { Store } from './src/app/store';
+import Themes from './src/themes';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -27,8 +29,10 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={Themes}>
-      <Routes />
-    </ThemeProvider>
+    <Provider store={Store}>
+      <ThemeProvider theme={Themes}>
+        <Routes />
+      </ThemeProvider>
+    </Provider>
   );
 }
