@@ -1,8 +1,11 @@
 {
   "expo": {
+    "name": "Aquaevitae",
+    "slug": "aquae",
+    "owner": "ipb-aquae",
     "extra": {
       "eas": {
-        "projectId": "41c2b14d-1123-491e-aafb-5702a12e2e17"
+        "projectId": "cadbe4eb-c793-42be-8899-3551a3049d3d"
       }
     },
     "android": {
