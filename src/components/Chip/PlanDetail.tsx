@@ -1,17 +1,18 @@
 import { Feather } from '@expo/vector-icons';
+import React from 'react';
 import { ScrollView, View } from 'react-native';
 import { IGlobalComponents } from '../../interfaces/IGlobal';
 import Colors from '../../themes/Colors';
 import { FontPrimary } from '../../themes/Fonts';
 import { StyledPlan } from './styled';
-
 interface IPlanDetail extends IGlobalComponents {
   text: string;
   listDetail: string[];
   onChange: (index: number) => void;
+  onRedirect?: () => void;
 }
 
-export const PlanDetail: React.FC<IPlanDetail> = ({ text, listDetail, onChange }) => {
+export const PlanDetail: React.FC<IPlanDetail> = ({ text, listDetail, onChange, onRedirect }) => {
   return (
     <StyledPlan>
       <FontPrimary size={15} weight={300} color={Colors.COLORS.secondary}>
@@ -44,7 +45,12 @@ export const PlanDetail: React.FC<IPlanDetail> = ({ text, listDetail, onChange }
               </FontPrimary>
             </View>
             <Feather
-              onPress={(e) => onChange(index)}
+              onPress={(e) => {
+                onChange(index);
+                if (onRedirect) {
+                  onRedirect();
+                }
+              }}
               name="edit"
               size={20}
               color={Colors.COLORS.secondary}

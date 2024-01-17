@@ -2,6 +2,7 @@ import Icon from '@expo/vector-icons/MaterialCommunityIcons';
 import { Button } from '@react-native-material/core';
 import { IGlobalComponents } from '../../interfaces/IGlobal';
 import Colors from '../../themes/Colors';
+import React from 'react';
 
 interface IButton extends IGlobalComponents {
   text: string;

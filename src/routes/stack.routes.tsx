@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { LoginScreen } from '../screens/Login';
 import { TabRoutes } from './tab.routes';
+import React from 'react';
 
 const { Screen, Navigator } = createNativeStackNavigator();
 

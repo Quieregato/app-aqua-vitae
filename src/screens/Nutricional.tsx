@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { ScrollView, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { ScrollView, Text, View } from 'react-native';
 import { ActivityIndicator } from 'react-native-paper';
 import { useDispatch, useSelector } from 'react-redux';
 import storage from '../app/services/data/storage';
@@ -17,6 +17,14 @@ export const NutricionalScreen = (navigation: any) => {
   const planHasDate = useSelector(
     (state: RootState) => state.nutritionalPlan.nutritionalPlanHasDay
   );
+  const params = navigation.route.params;
+  const [selectedDate, setSelectedDate] = useState<{
+    selected: string | undefined;
+    listDate: string[];
+  }>({
+    selected: params.dateSelect,
+    listDate: params.listOfDate,
+  });
   const listT = useSelector((state: RootState) => state.nutritionalPlan.listTemp);
   const dispatch = useDispatch();
   const handleGetFood = async (id: string) => {
@@ -37,6 +45,14 @@ export const NutricionalScreen = (navigation: any) => {
   const handleGetPlan = () => {
     planHasDate?.list_plan_as_meal.map(async (item: any) => handleGetFood(item.id));
   };
+
+  useEffect(() => {
+    setSelectedDate({
+      selected: params.dateSelect,
+      listDate: params.listOfDate,
+    });
+  }, [params]);
+
   useEffect(() => {
     dispatch(resetList());
     handleGetPlan();
@@ -79,8 +95,12 @@ export const NutricionalScreen = (navigation: any) => {
 
           {planHasDate?.list_plan_as_meal?.map((item) => (
             <View key={item.id}>
-              <FontPrimary size={14} color={Colors.COLORS.secondary} weight={400}>
-                {item.name}
+              <FontPrimary
+                size={14}
+                style={{ marginBottom: 10 }}
+                color={Colors.COLORS.secondary}
+                weight={400}>
+                <Text style={{ fontWeight: "600" }}>{item.name}</Text> / {selectedDate.selected}
               </FontPrimary>
 
               <CardDefault height={130}>
@@ -97,5 +117,5 @@ export const NutricionalScreen = (navigation: any) => {
         </ContainerNutricional>
       </ScrollView>
     </StyledPage>
-  );
+  ); 
 };
