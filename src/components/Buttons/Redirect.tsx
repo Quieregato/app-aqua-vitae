@@ -1,3 +1,4 @@
+import React from 'react';
 import Colors from '../../themes/Colors';
 import { FontPrimary } from '../../themes/Fonts';
 import { StyledBtnRedirect } from './styled';

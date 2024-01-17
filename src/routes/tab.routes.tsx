@@ -6,6 +6,7 @@ import {
   Octicons,
 } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React from 'react';
 import { DailyScreen } from '../screens/Daily';
 import { HomeScreen } from '../screens/Home';
 import { NutricionalScreen } from '../screens/Nutricional';
@@ -48,6 +49,10 @@ export const TabRoutes = ({ navigation }: any) => {
           tabBarIcon: () => (
             <MaterialCommunityIcons name="widgets-outline" size={20} color={Colors.COLORS.gray} />
           ),
+        }}
+        initialParams={{
+          listOfDate: [],
+          dateSelect: undefined,
         }}
         component={NutricionalScreen}
       />
